@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.Random;
+//This is a test
 
 public class Generator extends AppCompatActivity {
 
