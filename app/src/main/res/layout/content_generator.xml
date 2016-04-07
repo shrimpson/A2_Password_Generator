@@ -8,40 +8,108 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_generator" tools:context=".Generator"
-    android:backgroundTint="#d0dbff"
-    android:clickable="true">
+    android:background = "#000000"
+    android:clickable="false"
+    android:elevation="@android:dimen/app_icon_size">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="PW GEN"
+        android:text="Avalanche Password Generator"
         android:id="@+id/textView"
-        android:layout_marginTop="68dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="40dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Engage"
         android:id="@+id/myButton"
-        android:layout_marginTop="82dp"
-        android:layout_below="@+id/textView"
+        android:layout_above="@+id/editText"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_marginTop="95dp"
         android:minWidth="250dp"
-        android:layout_below="@+id/myButton"
-        android:layout_centerHorizontal="true"
         android:text="Password"
         android:textSize="50dp"
         android:clickable="false"
         android:editable="false"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upper Case"
+        android:id="@+id/checkBox"
+        android:layout_marginTop="65dp"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:checked="true"
+        android:buttonTint="#e7bceb"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Digits"
+        android:id="@+id/checkBox2"
+        android:layout_marginTop="31dp"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:checked="true"
+        android:buttonTint="#e7bceb"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lower Case"
+        android:id="@+id/checkBox3"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:checked="true"
+        android:buttonTint="#e7bceb"
+        android:layout_alignTop="@+id/checkBox"
+        android:layout_toRightOf="@+id/myButton"
+        android:layout_toEndOf="@+id/myButton" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Symbols"
+        android:id="@+id/checkBox4"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:checked="true"
+        android:layout_alignTop="@+id/checkBox2"
+        android:layout_alignLeft="@+id/checkBox3"
+        android:layout_alignStart="@+id/checkBox3"
+        android:buttonTint="#e7bceb" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/andyPicker"
+        android:layout_above="@+id/myButton"
+        android:layout_alignLeft="@+id/myButton"
+        android:layout_alignStart="@+id/myButton"
+        android:layout_toLeftOf="@+id/checkBox4"
+        android:layout_toStartOf="@+id/checkBox4"
+        android:orientation="horizontal" />
+
 </RelativeLayout>
