@@ -140,8 +140,8 @@ public class Generator extends AppCompatActivity {
         });
 
 
-        myPicker.setMinValue(1);
-        myPicker.setMaxValue(16);
+        myPicker.setMinValue(4);
+        myPicker.setMaxValue(10);
         myPicker.setWrapSelectorWheel(false);
         setNumberPickerTextColor(myPicker, -1);
         setDividerColor(myPicker, Color.rgb(231, 188, 235));
@@ -151,22 +151,27 @@ public class Generator extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.myButton);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                password = "";
-                numberOfDigits = myPicker.getValue();
-                if(check1.isChecked()){
-                    password = password.concat(upperCase);
+
+                if(check1.isChecked() || check2.isChecked() || check3.isChecked() || check4.isChecked()) {
+                    password = "";
+                    numberOfDigits = myPicker.getValue();
+                    if (check1.isChecked()) {
+                        password = password.concat(upperCase);
+                    }
+                    if (check2.isChecked()) {
+                        password = password.concat(digits);
+                    }
+                    if (check3.isChecked()) {
+                        password = password.concat(lowerCase);
+                    }
+                    if (check4.isChecked()) {
+                        password = password.concat(symbols);
+                    }
+                    fillPass(password, numberOfDigits);
+                    ((TextView) findViewById(R.id.editText)).setText(finalPassword);
+                } else {
+                    ((TextView) findViewById(R.id.editText)).setText("Password");
                 }
-                if(check2.isChecked()){
-                    password = password.concat(digits);
-                }
-                if(check3.isChecked()){
-                    password = password.concat(lowerCase);
-                }
-                if(check4.isChecked()){
-                    password = password.concat(symbols);
-                }
-                fillPass(password, numberOfDigits);
-                ((TextView) findViewById(R.id.editText)).setText(finalPassword);
             }
         });
 
