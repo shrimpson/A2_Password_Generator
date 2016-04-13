@@ -21,7 +21,7 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import java.util.Random;
 import java.lang.reflect.Field;
-
+//test
 
 public class Generator extends AppCompatActivity {
 
